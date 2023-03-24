@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Name, Password, and Quote Generator</title>
+	<style>
+		body {
+			background-color: #87CEFA; 
+			text-align: center;
+		}
+		h1 {
+			color: white;
+			text-shadow: 0px 0px 10px blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Random Name, Password, and Quote Generator</h1>
+	<p>Click the button below to generate a random name:</p>
+	<button onclick="generateName()">Generate Name</button>
+	<p id="output-name"></p>
+	
+	<p>Click the button below to generate a random password:</p>
+	<button onclick="generatePassword()">Generate Password</button>
+	<p id="output-password"></p>
+	
+	<p>Click the button below to generate a random inspirational quote:</p>
+	<button onclick="generateQuote()">Generate Quote</button>
+	<p id="output-quote"></p>
+
+	<script>
+		function generateName() {
+			
+			var ThefirstNames = ["Justin", "Eddie", "Sophia", "Mason", "Isabella", "James", "Mia", "Benjamin", "Charlotte", "Jacob", "Amelia", "Michael", "Harper", "Elijah", "Evelyn", "Ethan", "Abigail", "Alexander", "Emily", "Oliver", "Elizabeth", "Lucas", "Avery", "Ella", "Daniel", "Aiden", "Madison", "Logan", "Sofia", "Caleb", "Eleanor", "Gabriel", "Penelope", "Nicholas", "Luna", "Ryan", "Hazel", "Levi", "Grace", "Anthony", "Victoria", "Emma", "Noah", "Olivia", "Liam", "Ava", "William","Treshan"];
+			var ThelastNames = [ "White", "Paris", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "Harris", "Martin",  "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker", "Thompson", "Garcia","Hall", "Allen", "Young", "King", "Wright", "Green", "Baker", "Nelson", "Carter", "Mitchell", "Perez", "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Sanchez", "Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson","Lestor"];
+            var ThefirstNames = ThefirstNames[Math.floor(Math.random() * ThefirstNames.length)];
+			var ThelastNames = ThelastNames[Math.floor(Math.random() * ThelastNames.length)];
+            var output = document.getElementById("output-name");
+			output.innerHTML = ThefirstNames + " " + ThelastNames;
+		}
+
+		function generatePassword() {
+
+			var possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+		    var password = "";
+			for (var i = 0; i < 12; i++) {
+				password += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
+			}
+
+	        var output = document.getElementById("output-password");
+		output.innerHTML = password;
+	}
+	
+	function generateQuote() {
+
+		var quotes = [	"Believe you can and you're halfway there. -Theodore Roosevelt",	"Start where you are. Use what you have. Do what you can. -Arthur Ashe",	"Strive not to be a success, but rather to be of value. -Albert Einstein",	"I can't change the direction of the wind, but I can adjust my sails to always reach my destination. -Jimmy Dean",			"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. -Christian D. Larson",	"Don't watch the clock; do what it does. Keep going. -Sam Levenson",	"You are never too old to set another goal or to dream a new dream. -C.S. Lewis",			"Opportunity is missed by most people because it is dressed in overalls and looks like work. — Thomas Edison" ,	"The beautiful thing about learning is that no one can take it away from you. — B.B. King",	"Start by doing whats necessary, then whats possible; and suddenly you are doing the impossible. — Saint Francis", "Doing nothing is very hard to do… you never know when youre finished. — Leslie Nielsen"];
+        var quote = quotes[Math.floor(Math.random() * quotes.length)];
+        var output = document.getElementById("output-quote");
+		output.innerHTML = quote;
+	}
+</script>
+
